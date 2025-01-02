@@ -1,0 +1,74 @@
+/* App.css */
+
+/* General Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  color: #333;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 20px;
+  color: #3f51b5;
+  animation: fadeIn 2s ease-in-out;
+}
+
+h2 {
+  color: #ff5722;
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+/* Spinner (Loading Animation) */
+.spinner {
+  margin: 50px auto;
+  border: 5px solid #f4f4f9;
+  border-top: 5px solid #3f51b5;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+/* Error Message */
+.error {
+  color: #e91e63;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+/* Animations */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
