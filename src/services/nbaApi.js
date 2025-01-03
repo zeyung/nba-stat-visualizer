@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://nba-stat-visualizer.onrender.com/api";
+const API_BASE_URL = "https://nba-stat-visualizer.onrender.com";
 
 export const fetchGames = async () => {
   try {
