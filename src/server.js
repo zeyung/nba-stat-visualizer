@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const nbaRoutes = require("./routes/nba");
+const nbaRoutes = require("../routes/nba");
 
 const app = express();
 app.use(cors());
