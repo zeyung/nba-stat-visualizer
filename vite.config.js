@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://nba-stat-visualizer.onrender.com", // Replace with your live backend URL
+        target: "http://localhost:5004",
         changeOrigin: true,
         secure: false,
       },
