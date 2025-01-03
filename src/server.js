@@ -1,9 +1,10 @@
 const express = require("express");
 const cors = require("cors");
-const nbaRoutes = require("./routes/nba"); // Adjusted to reflect the `src/routes` location
+const nbaRoutes = require("./routes/nba");
 
 const app = express();
 
+// Middleware
 app.use(cors());
 app.use(express.json());
 
@@ -11,4 +12,6 @@ app.use(express.json());
 app.use("/api/nba", nbaRoutes);
 
 const PORT = process.env.PORT || 5004;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
