@@ -1,11 +1,12 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import NBAData from "./components/NBAData";
 
 function App() {
   return (
-    <div>
-      <NBAData />
-    </div>
+    <Routes>
+      <Route path="/" element={<NBAData />} />
+    </Routes>
   );
 }
 
