@@ -1,37 +1,38 @@
-import { useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { fetchGames } from "../services/nbaApi";
 
 const GameDetails = () => {
-  const { state } = useLocation();
-  const { game } = state || {};
+    const [games, setGames] = useState([]);
 
-  if (!game) {
-    return <div>No game details available</div>;
-  }
+    useEffect(() => {
+        const fetchData = async () => {
+            const gamesData = await fetchGames();
+            setGames(gamesData);
+        };
+        fetchData();
+    }, []);
 
-  return (
-    <div className="game-details-container">
-      <h2>Game Details</h2>
-      <div className="teams">
-        <div className="team">
-          <img src={game.teams.home.logo} alt={game.teams.home.name} className="team-logo" />
-          <h3>{game.teams.home.name}</h3>
-          <p>Points: {game.homePoints}</p>
+    return (
+        <div>
+            <h1>NBA Games</h1>
+            {games.length === 0 ? (
+                <p>No games available</p>
+            ) : (
+                games.map((game, index) => (
+                    <div key={index}>
+                        <h3>
+                            {game.homeTeam.name} vs {game.awayTeam.name}
+                        </h3>
+                        <p>
+                            Score: {game.scores.home} - {game.scores.away}
+                        </p>
+                        <img src={game.homeTeam.logo} alt={game.homeTeam.name} />
+                        <img src={game.awayTeam.logo} alt={game.awayTeam.name} />
+                    </div>
+                ))
+            )}
         </div>
-        <div className="team">
-          <img src={game.teams.away.logo} alt={game.teams.away.name} className="team-logo" />
-          <h3>{game.teams.away.name}</h3>
-          <p>Points: {game.awayPoints}</p>
-        </div>
-      </div>
-      <div className="game-date">
-        <strong>Date:</strong>{" "}
-        {new Date(game.date).toLocaleString("en-US", {
-          dateStyle: "medium",
-          timeStyle: "short",
-        })}
-      </div>
-    </div>
-  );
+    );
 };
 
 export default GameDetails;

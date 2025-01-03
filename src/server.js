@@ -1,8 +1,9 @@
 const express = require("express");
 const cors = require("cors");
-const nbaRoutes = require("./routes/nba");
+const nbaRoutes = require("./routes/nba"); // Adjusted to reflect the `src/routes` location
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
