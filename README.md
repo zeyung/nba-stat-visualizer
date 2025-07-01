@@ -1,8 +1,38 @@
-# React + Vite
+# 🏀 NBA Stats Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive tool that fetches real NBA player statistics from basketball-reference.com and visualizes career averages and trends using Python and Matplotlib.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+
+- **Web scraping** of NBA data (per-season stats) using Selenium  
+- Support for **any NBA player** by name  
+- Graphing of career averages (e.g. points, rebounds, assists)  
+- Two visualization modes:
+  - **Career Trend** chart showing per-season stats over time  
+  - **Predictive Regression** overlay (optional)
+
+---
+
+## 🧩 Tech Stack
+
+| Component        | Technology                     |
+|------------------|-------------------------------|
+| **Web Scraping** | Selenium + BeautifulSoup       |
+| **Data Handling** | pandas                         |
+| **Visualization** | matplotlib                     |
+| **CLI**          | Argument parsing via `sys.argv` |
+| **Environment**  | Python 3.x                     |
+
+---
+
+## 📁 Project Structure
+---
+
+## 📦 Installation
+
+Clone the repository:
+   ```bash
+   git clone https://github.com/zeyung/nba-stat-visualizer.git
+   cd nba-stat-visualizer
